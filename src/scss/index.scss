@@ -1,0 +1,153 @@
+@import 'px2rem.scss';
+$designWidth: 750;
+
+@mixin f_left($value: 10px) {
+	float: left;
+	margin-left: $value;
+}
+body{
+	background: #fff;
+	.main{
+		background: red;
+		width: px2rem(400);
+		height: px2rem(250 + 10);
+	}
+}
+.aaa{
+	@extend .main;
+	@include f_left(20px);
+	background: {
+		color: #dcdcdc;
+
+	}
+	padding: {
+		top: 20px + 20px;
+		left: (100px/2);
+		bottom: 30px*2;
+	}
+	border: {
+		width: 0;
+		style: solid;
+		color: red;
+	}
+	color: green;
+	@if 3 > 5 {
+		border: 10px solid green;
+	}
+	
+	position:relative;
+	border-radius: 6px;
+	overflow:hidden;
+	padding:0;
+	text-align: center;
+	line-height: px2rem(250 + 10);
+}
+.aaa:before,
+.aaa:after{
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	background: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.aaa:before{
+	left: 0;
+	transform: translateY(-50%) translateX(-50%);
+}
+.aaa:after{
+	right: 0;
+	transform: translateY(-50%) translateX(50%);
+}
+.cash{
+	.money-tip{
+		display: inline-block;
+	}
+	.money-tip{
+		width: 60px;
+		height: 60px;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		position: relative;
+		vertical-align: middle;
+	}
+	.money-tip:before{
+		position: absolute;
+		content: '';
+		width: 114%;
+		height: 114%;
+		border: 2px solid rgba(255,255,255,0.5);
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+	}
+	.money-num{
+		color: #fff;
+	}
+}
+.flex-container{
+	display: -webkit-flex;
+	display: flex;
+	height: 400px;
+	background: #FFD54F;
+	padding: 10px;
+	border: 1px solid #000;
+
+	/*flex-direction: row-reverse;*/
+	/*flex-direction: column;*/
+	/*flex-direction: column-reverse;*/
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-end;
+	align-content: center;
+}
+.item{
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	margin-left: 5px;
+	text-align: center;
+
+}
+.cicle{
+	display: inline-block;
+	background: #FFB200;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: .4rem;
+	color: #fff;
+	font-weight: bold;
+}
+.fix-wrapper{
+	position: relative;
+	padding: 20px;
+	background: green;
+	width: 400px;
+	/*height: 400px;*/
+}
+.fix-item{
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: red;
+	width: 80%;
+}
+.inline-item{
+	border: 1px solid #000;
+}
+.test-inline p *{
+	border: 1px solid #000;
+}
+
+
+
+
+
+
+
